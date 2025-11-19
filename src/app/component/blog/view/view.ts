@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { BlogService } from '../../../../../service/blog';
-import { IBlog } from '../../../../../model/blog';
 import { ActivatedRoute } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+import { IBlog } from '../../../model/blog';
+import { BlogService } from '../../../service/blog';
 
 @Component({
   selector: 'app-view',
@@ -23,14 +24,14 @@ export class ViewBlog {
     this.getBlog(blogId);
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  getBlog(blogId:number) {    
+  getBlog(blogId: number) {
     this.oBlogService.get(blogId).subscribe({
-      next: (data) => {
+      next: (data: IBlog) => {
         this.oBlog = data;
       },
-      error: (error) => {
+      error: (error: HttpErrorResponse) => {
         console.error('Error fetching blog:', error);
       },
     });
