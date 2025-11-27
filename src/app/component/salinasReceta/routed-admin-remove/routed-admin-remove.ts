@@ -54,7 +54,7 @@ export class SalinasRoutedAdminRemove implements OnInit {
     this.salinasService.delete(this.oSalinasReceta.id).subscribe({
       next: () => {
         this.deleting = false;
-        this.router.navigate(['/salinas/plist']);
+        this.router.navigate(['/receta/plist']);
       },
       error: (err: HttpErrorResponse) => {
         this.deleting = false;
@@ -65,6 +65,6 @@ export class SalinasRoutedAdminRemove implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/salinas/plist']);
+    this.router.navigate(['/receta/plist']);
   }
 }

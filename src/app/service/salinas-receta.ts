@@ -38,8 +38,9 @@ export class SalinasService {
     return this.oHttp.delete<number>(serverURL + '/receta/' + id);
   }
 
-  rellenaReceta(numPosts: number): Observable<number> {
-    return this.oHttp.get<number>(serverURL + '/receta/rellena/' + numPosts);
+  // MÉTODO PARA GENERAR DATOS FALSOS
+  bulkCreate(amount: number): Observable<number> {
+    // Asume que el backend tiene el endpoint /receta/populate/{amount}
+    return this.oHttp.post<number>(serverURL + '/receta/populate/' + amount, null);
   }
-
 }
