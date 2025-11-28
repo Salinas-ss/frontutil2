@@ -41,7 +41,7 @@ export class SalinasRoutedAdminEdit implements OnInit {
                 Validators.required,
                 Validators.minLength(3),
                 Validators.maxLength(200)]],
-            ingredientes: ['', [Validators.maxLength(100)]],
+            ingredientes: ['', [Validators.maxLength(10000)]],
             preparacion: ['', [
                 Validators.required,
                 Validators.minLength(10)]],

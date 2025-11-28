@@ -52,7 +52,7 @@
 
           <!-- Ingredientes -->
           <div class="mb-4">
-            <label for="etiquetas" class="form-label">Ingredientes</label>
+            <label for="ingredientes" class="form-label">Ingredientes</label>
             <input
               type="text"
               class="form-control"
@@ -65,7 +65,7 @@
             @if (ingredientes?.invalid && ingredientes?.touched) {
             <div class="invalid-feedback">
               @if (ingredientes?.errors?.['maxlength']) {
-                <span>Las etiquetas no pueden superar 100 caracteres.</span>
+                <span>Las ingredientes no pueden superar 10000 caracteres.</span>
               }
             </div>
             }
